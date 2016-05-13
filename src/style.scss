@@ -1,0 +1,124 @@
+@import "styles/normalize";
+@import "styles/mixins";
+@import "styles/fonts";
+
+/* Colors */
+$pink: #ff356e;
+$dark: #231f20;
+$light: #a09f9f;
+$text: #ffffff;
+/* Type */
+$letter-spacing: 0.15625rem;
+$font-stack: "Clear Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+/* Page */
+$global-spacing: 40px;
+body {
+  background: $dark;
+  color: white;
+  font-family: $font-stack;
+  text-align: center;
+}
+strong {
+  font-weight: bold;
+}
+header {
+  width: 100%;
+  height: 845px;
+  nav {
+    @extend .cf;
+    padding: $global-spacing;
+    margin-bottom: 30px;
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+    .small-logo {
+      float: left;
+      width: 130px;
+      height: 48px;
+      background: url('images/small-logo.png') center;
+      @include image-2x("images/small-logo@2x.png", 130px, 48px);
+    }
+    ul {
+      float: right;
+      list-style-type: none;
+      li {
+        float: left;
+        margin-left: $global-spacing;
+        &.buy {
+          text-align: right;
+          a {
+            font-weight: normal;
+            color: $light;
+            strong {
+              display: block;
+              color: $pink;
+            }
+          }
+        }
+      }
+      a {
+        vertical-align: top;
+        font-weight: bold;
+        text-decoration: none;
+        color: #FFFFFF;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        -webkit-font-smoothing: subpixel-antialiased;
+        letter-spacing: $letter-spacing;
+      }
+    }
+  }
+  .main-logo {
+    margin: 0 auto;
+    width: 282px;
+    height: 301px;
+    background: url('images/logo.png') center;
+    @include image-2x("images/logo@2x.png", 282px, 301px);
+  }
+  .bubbles {
+    margin: 0 auto;
+    width: 65px;
+    height: 22px;
+    background: url('images/top-divider.png') center;
+    @include image-2x("images/top-divider@2x.png", 65px, 22px);
+  }
+  h2 {
+    font-weight: 100;
+    color: $text;
+    font-size: 34px;
+    strong {
+      font-weight: bold;
+      color: $pink;
+    }
+  }
+  p {
+    color: $light;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+    margin-top: 2em;
+    line-height: 1.8em;
+    strong {
+      color: $text;
+    }
+  }
+}
+section {
+  width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  @extend .cf;
+  .title-overlay {
+    position: absolute;
+    top: $global-spacing;
+    color: $pink;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+    font-size: 0.6em;
+    padding-bottom: 14px;
+    background: url('images/divider.png') center bottom no-repeat;
+    @include image-2x("images/divider@2x.png", 58px, 19px);
+  }
+}
+
+@import "styles/resize";
