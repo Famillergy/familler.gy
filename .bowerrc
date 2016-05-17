@@ -1,0 +1,5 @@
+{
+  "directory": "vendor/bower",
+  "analytics": true,
+  "timeout": 120000
+}
