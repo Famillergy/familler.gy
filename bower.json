@@ -1,0 +1,9 @@
+{
+    "name": "familler.gy-www",
+    "version": "1.0.0",
+    "devDependencies": {
+        "bootstrap": "3.3.*",
+        "jquery": "1.10.*"
+    },
+    "dependencies": {}
+}

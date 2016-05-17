@@ -1,14 +1,12 @@
-'use strict';
+const Hapi = require('hapi');
 
-var Hapi = require('hapi');
-
-var server = new Hapi.Server();
+const server = new Hapi.Server();
 
 server.connection({
     port: process.env.PORT || 3000
 });
 
-server.register(require('inert'), function (err) {
+server.register(require('inert'), err => {
 
     if (err) {
         throw err;
@@ -17,7 +15,7 @@ server.register(require('inert'), function (err) {
     server.route({
         method: 'GET',
         path: '/style.css',
-        handler: function handler(request, reply) {
+        handler: function (request, reply) {
             reply.file('./dist/style.css');
         }
     });
@@ -53,12 +51,12 @@ server.register(require('inert'), function (err) {
     server.route({
         method: 'GET',
         path: '/',
-        handler: function handler(request, reply) {
+        handler: function (request, reply) {
             reply.file('./dist/index.html');
         }
     });
 
-    server.start(function (err) {
+    server.start(err => {
 
         if (err) {
             throw err;
